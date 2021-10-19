@@ -14,8 +14,19 @@ export default {
     HelloWorld
   },
   data() {
-    
+    return {
+      chess1: 'pawn',
+      chess2: 'knight',
+      chess3: 'bishop',
+      chess4: 'rook',
+      chess5: 'queen',
+      chess6: 'king',
+    }
   }
+}
+methods: {
+shuffleChess() {
+  Math.floor(Math.random(this.data) )
 }
 
 </script>
