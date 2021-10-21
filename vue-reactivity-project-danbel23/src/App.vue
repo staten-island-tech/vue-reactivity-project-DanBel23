@@ -2,6 +2,13 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>{{ title }}</h1>
+    <button>{{ chess1 }}</button>
+    <button>{{ chess2 }}</button>
+    <button>{{ chess3 }}</button>
+    <button>{{ chess4 }}</button>
+    <button>{{ chess5 }}</button>
+    <button>{{ chess6 }}</button>
   </div>
 </template>
 
@@ -15,6 +22,7 @@ export default {
   },
   data() {
     return {
+      title: 'Chess!',
       chess1: 'pawn',
       chess2: 'knight',
       chess3: 'bishop',
@@ -24,10 +32,7 @@ export default {
     }
   }
 }
-methods: {
-shuffleChess() {
-  Math.floor(Math.random(this.data) )
-}
+
 
 </script>
 
