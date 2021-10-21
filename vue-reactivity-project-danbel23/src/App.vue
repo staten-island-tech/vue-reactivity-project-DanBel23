@@ -45,4 +45,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.button {
+  display: flex;
+  justify-content: center;
+  top: 10rem;
+}
 </style>
