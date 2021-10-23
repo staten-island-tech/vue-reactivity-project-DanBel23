@@ -3,14 +3,12 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h1>{{ title }}</h1>
-    <div class="chessbuttons">
-      <button>{{ chess1 }}</button>
-      <button>{{ chess2 }}</button>
-      <button>{{ chess3 }}</button>
-      <button>{{ chess4 }}</button>
-      <button>{{ chess5 }}</button>
-      <button>{{ chess6 }}</button>
-    </div>
+    <div class="chessbuttons" >
+      <button class ="btn"  v-for = "chessPiece in chessPieces" :key="chessPiece" @click="displayImage(chessPiece)" >{{chessPiece}}</button>
+     </div>
+     <div >
+       <img class="chessP" v-bind:src= "currentImage">
+     </div>
   </div>
 </template>
 
@@ -25,12 +23,23 @@ export default {
   data() {
     return {
       title: 'Chess!',
-      chess1: 'pawn',
-      chess2: 'knight',
-      chess3: 'bishop',
-      chess4: 'rook',
-      chess5: 'queen',
-      chess6: 'king',
+      chessPieces: ['Pawn', 'Knight', 'Bishop','Rook','Queen','King'],
+      currentImage:'',
+      chessImages: {Pawn: './assets/Chesspawn.jpeg', 
+        Knight: './assets/Chessknight.jpeg',
+        Bishop: './assets/ChessBishop.jpeg',
+        Rook: './assets/ChessRook.jpeg', 
+        Queen:'./assets/ChessQueen.jpeg', 
+        King: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Chess_piece_-_White_king.jpg',
+      }
+      
+      
+    }
+  },
+  methods: {
+    displayImage(piece) { 
+      this.currentImage = this.chessImages[piece];
+          
     }
   }
 }
@@ -50,8 +59,24 @@ export default {
 .chessbuttons {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  flex-direction: row;
   margin:3 auto;
-  
+}
+.chessP {
+  height: 30rem;
+  margin-top: 4rem;
+}
+.btn {
+  padding: 1rem;
+  display: flex;
+  background-color: red;
+  color: gold;
+  flex-direction: row;
+  text-align: center;
+  border-radius: 1.5rem;
+}
+.btn:hover {
+  transform: scaleX(1.2) scaleY(1.2);
+  border-radius: 0.5rem;
 }
 </style>
