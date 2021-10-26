@@ -25,13 +25,13 @@ export default {
       title: 'Chess!',
       chessPieces: ['Pawn', 'Knight', 'Bishop','Rook','Queen','King'],
       currentImage:'',
-      chessImages: {Pawn: './assets/Chesspawn.jpeg', 
-        Knight: './assets/Chessknight.jpeg',
-        Bishop: './assets/ChessBishop.jpeg',
-        Rook: './assets/ChessRook.jpeg', 
-        Queen:'./assets/ChessQueen.jpeg', 
-        King: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Chess_piece_-_White_king.jpg',
-      }
+      chessImages: {Pawn: require('assets/Chesspawn.jpeg'), 
+        Knight: require('assets/Chessknight.jpeg'),
+        Bishop: require('assets/ChessBishop.jpeg'),
+        Rook: require('assets/ChessRook.jpeg'), 
+        Queen: require('assets/ChessQueen.jpeg'), 
+        King: require('assests/ChessKing.jpeg')
+      },
       
       
     }
