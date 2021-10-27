@@ -3,6 +3,9 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h1>{{ title }}</h1>
+    <div class ="cartButton">
+       <button class="cart">Add to Cart!</button>
+     </div>
     <div class="chessbuttons" >
       <button class ="btn"  v-for = "chessPiece in chessPieces" :key="chessPiece" @click="displayImage(chessPiece)" >{{chessPiece}}</button>
      </div>
@@ -25,12 +28,13 @@ export default {
       title: 'Chess!',
       chessPieces: ['Pawn', 'Knight', 'Bishop','Rook','Queen','King'],
       currentImage:'',
-      chessImages: {Pawn: require('assets/Chesspawn.jpeg'), 
-        Knight: require('assets/Chessknight.jpeg'),
-        Bishop: require('assets/ChessBishop.jpeg'),
-        Rook: require('assets/ChessRook.jpeg'), 
-        Queen: require('assets/ChessQueen.jpeg'), 
-        King: require('assests/ChessKing.jpeg')
+      chessImages: {
+        Pawn: require('./assets/Chesspawn.jpeg'), 
+        Knight: require('./assets/Chessknight.jpeg'),
+        Bishop: require('./assets/ChessBishop.jpeg'),
+        Rook: require('./assets/ChessRook.jpeg'), 
+        Queen: require('./assets/ChessQueen.jpeg'), 
+        // King: require('./assests/ChessKing.jpeg')  
       },
       
       
@@ -76,6 +80,23 @@ export default {
   border-radius: 1.5rem;
 }
 .btn:hover {
+  transform: scaleX(1.2) scaleY(1.2);
+  border-radius: 0.5rem;
+}
+.cartButton {
+  display: flex;
+  justify-content: center;
+}
+.cart {
+  padding: 1rem;
+  display: flex;
+  background-color: blue;
+  color: gold;
+  flex-direction: row;
+  text-align: center;
+  border-radius: 1.5rem;
+}
+.cart:hover {
   transform: scaleX(1.2) scaleY(1.2);
   border-radius: 0.5rem;
 }
