@@ -3,8 +3,8 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h1>{{ title }}</h1>
-    <div class ="cartButton">
-       <button class="cart" v-on:click="cart">Add to Cart!</button>
+    <div class ="cart">
+       <button class="cartButton" v-on:click="cart">Add to Cart!</button>
      </div>
     <div class="chessbuttons" >
       <button class ="btn"  v-for = "chessPiece in chessPieces" :key="chessPiece" @click="displayImage(chessPiece)" >{{chessPiece}}</button>
@@ -45,7 +45,12 @@ export default {
       this.currentImage = this.chessImages[piece];
           
     },
-  }
+    addtoCart() {
+      const cart = document.querySelector("cart");
+      this.cart += 1;
+      console.log(cart);
+    }
+  },
 }
 
 
@@ -83,11 +88,11 @@ export default {
   transform: scaleX(1.2) scaleY(1.2);
   border-radius: 0.5rem;
 }
-.cartButton {
+.cart {
   display: flex;
   justify-content: center;
 }
-.cart {
+.cartButton {
   padding: 1rem;
   display: flex;
   background-color: blue;
