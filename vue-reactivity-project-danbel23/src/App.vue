@@ -4,7 +4,7 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h1>{{ title }}</h1>
     <div class ="cartButton">
-       <button class="cart">Add to Cart!</button>
+       <button class="cart" v-on:click="cart">Add to Cart!</button>
      </div>
     <div class="chessbuttons" >
       <button class ="btn"  v-for = "chessPiece in chessPieces" :key="chessPiece" @click="displayImage(chessPiece)" >{{chessPiece}}</button>
@@ -36,7 +36,7 @@ export default {
         Queen: require('./assets/ChessQueen.jpeg'), 
         // King: require('./assests/ChessKing.jpeg')  
       },
-      
+      cart: [],
       
     }
   },
@@ -44,7 +44,7 @@ export default {
     displayImage(piece) { 
       this.currentImage = this.chessImages[piece];
           
-    }
+    },
   }
 }
 
