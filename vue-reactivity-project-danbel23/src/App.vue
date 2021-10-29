@@ -4,7 +4,7 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h1>{{ title }}</h1>
     <div class ="cart">
-       <button class="cartButton" v-on:click="cart">Add to Cart!</button>
+       <button class="cartButton" @click="addtoCart()">Add to Cart!</button>
      </div>
     <div class="chessbuttons" >
       <button class ="btn"  v-for = "chessPiece in chessPieces" :key="chessPiece" @click="displayImage(chessPiece)" >{{chessPiece}}</button>
@@ -46,9 +46,10 @@ export default {
           
     },
     addtoCart() {
-      const cart = document.querySelector("cart");
-      this.cart += 1;
-      console.log(cart);
+      // const cart = document.querySelector("cart");
+      let cart = Number(this.cart);
+      this.cart = cart + 1
+      console.log(this.cart);
     }
   },
 }
